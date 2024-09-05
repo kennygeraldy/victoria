@@ -151,14 +151,21 @@ public class Main {
 //        }
 
 //        Latihan 10
-        int i;
-        for (i = 1; i<=30; i++){
-            if (i %2 == 0) {
-                continue;
-            }
-            System.out.print(i);
-            }
+//        int i;
+//        for (i = 1; i<=30; i++){
+//            if (i %2 == 0) {
+//                continue;
+//            }
+//            System.out.print(i);
+//            }
 
+//        Latihan 11
+        int myNum = 8;
+        int factorial = 1;
+        for (int i = 1; i <= myNum; i++) {
+            factorial *= i;
+        }
+        System.out.println(factorial);
     }
 
 
