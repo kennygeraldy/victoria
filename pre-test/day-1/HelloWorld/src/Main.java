@@ -2,7 +2,35 @@ public class Main {
 
     public Main() {
 
-        System.out.println("Hello World");
+        int umur;
+        umur = 22;
+
+        String myName;
+        myName = "Kenny Geraldy Chandra";
+
+        double duit;
+        duit = 1000000000;
+
+        float tinggi;
+        tinggi = 180.50f;
+
+        char grade;
+        grade = 'A';
+
+        boolean isJavaFun;
+        isJavaFun = true;
+
+
+        System.out.println("Hello World\n");
+        System.out.println("Biodata Saya");
+        System.out.println("===========================");
+        System.out.println("Nama saya adalah "+myName);
+        System.out.println("Umur saya adalah "+umur);
+        System.out.println("Tinggi saya adalah "+tinggi);
+        System.out.println("Duit saya adalah Rp. "+duit);
+        System.out.println("Nilai rata-rata saya adalah "+grade);
+        System.out.println("Menurut saya java itu mengasikan "+isJavaFun);
+
     }
     public static void main(String[] args) {
         new Main();
