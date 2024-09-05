@@ -66,28 +66,46 @@ public class Main {
 //        }
 
 //        Latihan 4 Operator
-        int angka;
+//        int angka;
+//
+//        System.out.println("Insert number");
+//        angka = sc.nextInt();
+//        sc.nextLine();
+//        if (angka > 5) {
+//            System.out.println("Number is higher than 5");
+//            if (angka % 2 == 0) {
+//                System.out.println("Number is even");
+//            } else {
+//                System.out.println("Number is odd");
+//            }
+//        } else {
+//            System.out.println("Number is not higher than 5");
+//            if (angka % 2 == 0) {
+//                System.out.println("Number is even");
+//            } else {
+//                System.out.println("Number is odd");
+//            }
+//        };
 
-        System.out.println("Insert number");
-        angka = sc.nextInt();
-        sc.nextLine();
-        if (angka > 5) {
-            System.out.println("Number is higher than 5");
-            if (angka % 2 == 0) {
-                System.out.println("Number is even");
-            } else {
-                System.out.println("Number is odd");
-            }
-        } else {
-            System.out.println("Number is not higher than 5");
-            if (angka % 2 == 0) {
-                System.out.println("Number is even");
-            } else {
-                System.out.println("Number is odd");
-            }
-        };
-
+//        Latihan 5
+        int day = 1;
+        String dayName;
+        switch (day) {
+            case 1:
+                dayName = "Sunday";
+                break;
+            case 2:
+                dayName = "Monday";
+                break;
+            case 3:
+                dayName = "Tuesday";
+                break;
+            default: dayName ="Invalid day";
+            break;
+        }
+        System.out.println("Day "+day+" adalah "+dayName);
     }
+
     public static void main(String[] args) {
         new Main();
 
