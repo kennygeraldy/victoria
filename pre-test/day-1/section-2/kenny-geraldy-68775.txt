@@ -1,0 +1,21 @@
+1. B
+2. C
+3. B
+4. A
+5. B
+6. A
+7. D
+8. A
+9. B
+10. A
+11. A
+12. A
+13. B
+14. A
+15. A
+
+16. Gak tau
+17. gak tau
+18. gak tau cara jelasinnya
+19.Dengan adanya inheritance maka kita tidak perlu membuat function yang berulang dikarenakan, anakan dari inheritance secara langsung akan menggunakan function yg ada pada parentnya. dan hanya pelru menambahkan function yg dibutuhkan di anakannya.
+20. Overload membolehkan subclass untuk mengimplemen method yang ada pada superclass, sedangkan override membolehkan subclass untuk menimpa method yg sudah ada di superclass
