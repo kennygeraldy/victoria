@@ -2,8 +2,10 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        Animal data = new Animal();
         Dog dog = new Dog();
-        dog.bark();
-        dog.eat();
+        Cat cat = new Cat();
+        dog.makeSound();
+        cat.makeSound();
     }
 }
