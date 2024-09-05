@@ -40,18 +40,30 @@ public class Main {
 //        System.out.println("Menurut saya java itu mengasikan "+isJavaFun);
 
 //        Latihan ke 2
+//
+//        final float pi = 3.14F;
+//        int radius;
+//
+//        do {
+//            System.out.print("Masukkan Luas: ");
+//            radius = sc.nextInt();
+//            sc.nextLine();
+//        } while (radius == 0); {
+//            System.out.print(pi * (radius * radius));
+//        }
 
-        final float pi = 3.14F;
-        int radius;
 
-        do {
-            System.out.print("Masukkan Luas: ");
-            radius = sc.nextInt();
-            sc.nextLine();
-        } while (radius == 0); {
-            System.out.print(pi * (radius * radius));
+//        Latihan 3
+        int angka;
+
+        System.out.println("Insert number");
+        angka = sc.nextInt();
+        sc.nextLine();
+        if (angka %2 == 0) {
+            System.out.println("Number is even");
+        } else {
+            System.out.println("Number is odd");
         }
-
     }
     public static void main(String[] args) {
         new Main();
