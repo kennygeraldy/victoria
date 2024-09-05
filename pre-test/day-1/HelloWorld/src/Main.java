@@ -88,23 +88,38 @@ public class Main {
 //        };
 
 //        Latihan 5
-        int day = 1;
-        String dayName;
-        switch (day) {
-            case 1:
-                dayName = "Sunday";
-                break;
-            case 2:
-                dayName = "Monday";
-                break;
-            case 3:
-                dayName = "Tuesday";
-                break;
-            default: dayName ="Invalid day";
-            break;
-        }
-        System.out.println("Day "+day+" adalah "+dayName);
+//        int day = 1;
+//        String dayName;
+//        switch (day) {
+//            case 1:
+//                dayName = "Sunday";
+//                break;
+//            case 2:
+//                dayName = "Monday";
+//                break;
+//            case 3:
+//                dayName = "Tuesday";
+//                break;
+//            default: dayName ="Invalid day";
+//            break;
+//        }
+//        System.out.println("Day "+day+" adalah "+dayName);
+//    }
+
+//        Latihan 6
+        Integer [] x = new Integer[]{10, 75, 76, 47};
+       for (Integer angka : x) {
+           switch (angka % 2) {
+               case 0:
+                   System.out.println("Number is even");
+                   break;
+               case 1:
+                   System.out.println("Number is odd");
+                   break;
+           }
+       }
     }
+
 
     public static void main(String[] args) {
         new Main();
