@@ -17,11 +17,13 @@ class  Library implements LibraryManagement {
         items = new ArrayList<>();
     }
 
+    @Override
     public void addItem(LibraryItem item) {
         items.add(item);
         System.out.println("Item has been added succesfully " + item.getTitle());
     }
 
+    @Override
     public void removeItem(String itemId) {
         LibraryItem item = findItemById(itemId);
         if (item != null) {
@@ -32,12 +34,14 @@ class  Library implements LibraryManagement {
         }
     }
 
+    @Override
     public void listAllItems(){
         for (LibraryItem item : items) {
             item.printDetails();
         }
     }
 
+    @Override
     public void checkOutItem(String itemId) {
         LibraryItem item = findItemById(itemId);
         if (item != null) {
@@ -47,6 +51,7 @@ class  Library implements LibraryManagement {
         }
     }
 
+    @Override
     public void returnItem(String itemId) {
         LibraryItem item = findItemById(itemId);
         if (item != null) {
@@ -56,6 +61,7 @@ class  Library implements LibraryManagement {
         }
     }
 
+    @Override
     public LibraryItem searchByTitle(String title) {
         for (LibraryItem item : items) {
             if (item.getTitle().equalsIgnoreCase(title)) {
