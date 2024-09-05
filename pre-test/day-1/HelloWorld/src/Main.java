@@ -8,6 +8,9 @@ public class Main {
         String myName;
         myName = "Kenny Geraldy Chandra";
 
+        long gaji;
+        gaji = 0;
+
         double duit;
         duit = 1000000000;
 
@@ -28,6 +31,7 @@ public class Main {
         System.out.println("Umur saya adalah "+umur);
         System.out.println("Tinggi saya adalah "+tinggi);
         System.out.println("Duit saya adalah Rp. "+duit);
+        System.out.println("Gaji saya adalah Rp. "+gaji);
         System.out.println("Nilai rata-rata saya adalah "+grade);
         System.out.println("Menurut saya java itu mengasikan "+isJavaFun);
 
