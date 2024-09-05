@@ -53,17 +53,40 @@ public class Main {
 //        }
 
 
-//        Latihan 3
+//        Latihan 3 Arithmetic Operator
+//        int angka;
+//
+//        System.out.println("Insert number");
+//        angka = sc.nextInt();
+//        sc.nextLine();
+//        if (angka %2 == 0) {
+//            System.out.println("Number is even");
+//        } else {
+//            System.out.println("Number is odd");
+//        }
+
+//        Latihan 4 Operator
         int angka;
 
         System.out.println("Insert number");
         angka = sc.nextInt();
         sc.nextLine();
-        if (angka %2 == 0) {
-            System.out.println("Number is even");
+        if (angka > 5) {
+            System.out.println("Number is higher than 5");
+            if (angka % 2 == 0) {
+                System.out.println("Number is even");
+            } else {
+                System.out.println("Number is odd");
+            }
         } else {
-            System.out.println("Number is odd");
-        }
+            System.out.println("Number is not higher than 5");
+            if (angka % 2 == 0) {
+                System.out.println("Number is even");
+            } else {
+                System.out.println("Number is odd");
+            }
+        };
+
     }
     public static void main(String[] args) {
         new Main();
