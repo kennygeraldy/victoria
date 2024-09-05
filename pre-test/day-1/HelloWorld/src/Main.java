@@ -141,15 +141,23 @@ public class Main {
 //        }
 
 //        Latihan 9
-        int i;
-        for (i = 1; i<=50; i++){
-            if (i %15 == 0) {
-                break;
-            } else {
-                System.out.print(i);
-            }
-        }
+//        int i;
+//        for (i = 1; i<=50; i++){
+//            if (i %15 == 0) {
+//                break;
+//            } else {
+//                System.out.print(i);
+//            }
+//        }
 
+//        Latihan 10
+        int i;
+        for (i = 1; i<=30; i++){
+            if (i %2 == 0) {
+                continue;
+            }
+            System.out.print(i);
+            }
 
     }
 
