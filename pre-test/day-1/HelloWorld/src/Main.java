@@ -107,18 +107,28 @@ public class Main {
 //    }
 
 //        Latihan 6
-        Integer [] x = new Integer[]{10, 75, 76, 47};
-       for (Integer angka : x) {
-           switch (angka % 2) {
-               case 0:
-                   System.out.println("Number is even");
-                   break;
-               case 1:
-                   System.out.println("Number is odd");
-                   break;
-           }
-       }
+//        Integer [] x = new Integer[]{10, 75, 76, 47};
+//       for (Integer angka : x) {
+//           switch (angka % 2) {
+//               case 0:
+//                   System.out.println("Number is even");
+//                   break;
+//               case 1:
+//                   System.out.println("Number is odd");
+//                   break;
+//           }
+//       }
+
+//        Latihan 7
+        for (int i = 1; i <= 50; i++) {
+            if (i % 2 == 0) {
+                System.out.print(" even ");
+            } else {
+                System.out.print(i);
+            }
+        }
     }
+
 
 
     public static void main(String[] args) {
