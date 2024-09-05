@@ -129,16 +129,27 @@ public class Main {
 //        }
 //
 //        Latihan 8
+//        int i;
+//        i = 1;
+//        while (i <= 50 ) {
+//            if (i %2 == 0){
+//                System.out.print(" Even ");
+//            } else {
+//                System.out.print(i);
+//            }
+//            i++;
+//        }
+
+//        Latihan 9
         int i;
-        i = 1;
-        while (i <= 50 ) {
-            if (i %2 == 0){
-                System.out.print(" Even ");
+        for (i = 1; i<=50; i++){
+            if (i %15 == 0) {
+                break;
             } else {
                 System.out.print(i);
             }
-            i++;
         }
+
 
     }
 
