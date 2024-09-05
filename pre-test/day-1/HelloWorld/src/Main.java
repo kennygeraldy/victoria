@@ -160,12 +160,16 @@ public class Main {
 //            }
 
 //        Latihan 11
-        int myNum = 8;
-        int factorial = 1;
-        for (int i = 1; i <= myNum; i++) {
-            factorial *= i;
-        }
-        System.out.println(factorial);
+//        int myNum = 8;
+//        int factorial = 1;
+//        for (int i = 1; i <= myNum; i++) {
+//            factorial *= i;
+//        }
+//        System.out.println(factorial);
+
+//        Latihan 12
+
+
     }
 
 
