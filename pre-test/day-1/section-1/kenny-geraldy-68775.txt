@@ -1,0 +1,52 @@
+1. C
+2. C
+3. B
+4. B
+5. D 
+6. C
+7. A
+8. B 
+9. B
+10. A
+11. B
+12. A
+13. A
+14. B
+15. A
+
+16. Wrapper class adalah sebuah kelas pembungkus untuk membungkus data primitif agar bisa digunakan sebagai objek. (Example nya saya lupa)
+17. == untuk membandingkan 2 value, dan memastikan bahwa nilai dari B sama dengan nilai A dari sebuah variabel. Sedangkan equals, untuk membandingkan 2 value yang bernilai string dan memastikan data yang diinput sesuai dengan aturan / rules yang sudah di set.
+18.  
+
+import java.util.Scanner;
+
+public class Main {
+
+     Scanner sc = new Scanner(System.in);
+
+    public Main() {
+
+    int angka;
+    
+            System.out.println("Insert number");
+            angka = sc.nextInt();
+            sc.nextLine();
+            if (angka %2 == 0) {
+                System.out.println("Number is even");
+            } else {
+                System.out.println("Number is odd");
+            }
+    }
+    public static void main(String[] args) {
+        new Main();
+
+    }
+}
+
+
+19. Perbedaan masing-masing loop;
+    For = memastikan function digunakan berulang dan terus menerus menurut rules yang telah di set.
+    Foreach = memastikan setiap function yang ada terjalankan masing-masing sekali.
+    Do While = menjalankan function A, namun memastikan dalam menjalankan function A harus melakukan tindakan atau rules yang di set di kondisi B (While)
+
+20. this berlaku untuk menunjuk atau menggunakan data pada constructor tersebut.
