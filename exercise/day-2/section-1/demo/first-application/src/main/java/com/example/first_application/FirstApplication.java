@@ -19,7 +19,7 @@ public class FirstApplication {
 	}
 
 	@GetMapping
-	public ArrayList<GetAssetResponse> sayHello(){
+	public ArrayList<GetAssetResponse> getAsset(){
 
 		ArrayList<GetAssetResponse> List = new ArrayList<>();
 		var response = GetAssetResponse.builder().id(1L).fullName("Kenny Geraldy Chandra").umur(22).gender("Laki-Laki").address("Jl. Kintamani No.2").build();
