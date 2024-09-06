@@ -22,7 +22,7 @@ URL: profile/users
 Method: GET
 RequestBody
 {
-    "id": "UU01",
+    "id": "U001",
     "name": "Kenny Geraldy",
     "umur":22,
     "gender":"Laki-Laki"
