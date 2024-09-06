@@ -1,0 +1,36 @@
+1.B
+2.B
+3.B
+4.B
+5.C
+6.B
+7.B
+8.C
+9.A
+10.B
+
+1.False
+2.False
+3.TRUE
+4.TRUE
+5.TRUE
+
+1. Restful API principles adalah sebuah guideline yang digunakan untuk membantu kita dalam pembuatan web service yang menggunakan REST Architectural Style. dalam prinsip Restful API dibagi menjadi beberapa key prinsip yaitu, statelessness, uniform interface, resource-based architecture, self-descriptive message, dan hypermedia.
+2. 
+GET: Untuk mengambil data dari server
+POST: Untuk mengirim data ke  server atau membuat resource baru
+PUT: Untuk mengupdate atau mengubah data yang sudah ada
+DELETE: Untuk mendelet data dari server
+3. Spring Boot memberikan lebih banyak kemudahan dan standar yang berpendirian keras. Jadi, ini adalah pilihan yang lebih disukai untuk pengembangan dan penerapan aplikasi web yang cepat, terutama dalam arsitektur layanan mikro.
+4. Anotasi @RequestMapping digunakan untuk memetakan permintaan ke metode pengontrol. Untuk membantu pengontrolannya juga dibutuhkan beberapa atribut yang dicocokkan berdasarkan URL, metode HTTP, parameter permintaan, header, dan jenis media. Hal ini dapat menggunakannya di tingkat kelas untuk mengekspresikan pemetaan bersama atau di tingkat metode untuk mempersempit pemetaan titik akhir tertentu.
+5. HTTP status code membantu user dalam menentukan alasan error tersebut terjadi. Salah satu contoh http yang sering ditemui adalah 404 not found merupakan pesan kesalahan yang muncul ketika sebuah server web tidak dapat menemukan halaman yang diminta oleh pengguna. 
+6. Hal ini dapat dilakukand dengan menentukan aturan validasi dalam validator permintaan, tambahkan validator ke peta validator permintaan API, dan tetapkan validator ke masing-masing metode API.
+7. Dependency Injection (DI) adalah sebuah Injeksi ketergantungan secara umum berarti meneruskan objek yang bergantung sebagai parameter ke suatu metode, daripada meminta metode tersebut membuat objek yang bergantung. Sedangkan Inversion of Control (IOC) adalah Pembalikan kontrol, hal ini Ini berarti memberikan kontrol pembuatan dan pembuatan instance spring bean ke container Spring IOC
+8. RequestBody secara singkat adalah sebuah objek yang dideserialisasi diteruskan sebagai parameter metode. Sedangkan ResponseBody adalah Objek serial dikembalikan dari metode.
+9. Spring Boot menggunakan deserialisasi menggunakan ResponseBody, dan untuk membantu hal ini Spring Boot menggunakan Java Library yang di set sebagai default yaitu Jackson.
+10. Exception Handling dapat membantu kita untuk mengidentifikasi, menanggulangi, dan memberi respons yang tepat terhadap kesalahan yang muncul saat program berjalan. Dalam spring boot kita dapat menggunakan @ControllerAdvice dan @ExceptionHandler , Untuk memastikan respons kesalahan yang konsisten dan informatif di seluruh aplikasi yang kita develop.
+11. Kesalahan CORS terjadi ketika halaman web membuat permintaan ke domain yang berbeda dari domain yang melayani halaman tersebut, dan server merespons dengan kesalahan HTTP karena header "Asal" dalam permintaan tidak diizinkan oleh konfigurasi CORS server. Ada beberapa cara yang dapat kita lakukan dalam Spring Boot yaitu Using @CrossOrigin annotation at @Controller class and method level. kemudian penggunaan Overriding CorsRegistry pada WebMvcConfigurer bean. Terakhir kita dapat mengkonfigurasi  CORS settings menggunakan Spring security's http.
+12. Dalam menjaga keamanan API menggunakan Spring Security pengguna dapat membuat membuat otentikasi, otorisasi, dan perlindungan terhadap serangan umum.
+13. statelessness adalah sebuah metode komunikasi di mana server menyelesaikan setiap permintaan klien secara independen dari semua permintaan sebelumnya. Hal ini sangat penting digunakan untuk membantu developer dalam membuat sebuah API yang kuat namun dapat lebih mudah dimengerti, dan digunakan.
+14. Secara gambar kasar postman dapat digunakan untuk memeriksa apakah API tersebut berfungsi dan berjalan. hal ini dapat dilakukan dengan membuat request baru kemudian, memasukan api endpoint dari url yang ingin di test, kemudian memilih metode yang ingin digunakan dan meliat review response yang diberikan dari postman.
+15. Unit Testing menyediakan aksesibilitas kode yang diperlukan karena hanya menguji kode tertulis, sedangkan untuk Integration Testing akan akses ke kode yang tidak diperlukan karena akan menguji interaksi dan antarmuka antar modul.
