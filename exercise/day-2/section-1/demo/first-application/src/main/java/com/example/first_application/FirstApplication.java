@@ -1,18 +1,18 @@
 package com.example.first_application;
 
+import com.example.first_application.request.CreateUserRequest;
+import com.example.first_application.request.EmployeeUserRequest;
+import com.example.first_application.response.CreateUserResponse;
+import com.example.first_application.response.EmployeeUserResponse;
 import com.example.first_application.response.GetAssetResponse;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 @RestController
 @SpringBootApplication
@@ -80,30 +80,67 @@ public class FirstApplication {
 //		return tempAsset;
 //	}
 
-	@GetMapping("/assets")
-	public List<GetAssetResponse> getAssetById(
-			@RequestParam(name = "page", required = false, defaultValue = "1") int page,
-			@RequestParam(name = "size", required = false, defaultValue = "3") int size
-	) {
+//	@GetMapping("/assets")
+//	public List<GetAssetResponse> getAssetById(
+//			@RequestParam(name = "page", required = false, defaultValue = "1") int page,
+//			@RequestParam(name = "size", required = false, defaultValue = "3") int size
+//	) {
+//
+//		List<GetAssetResponse> asset = new ArrayList<>();
+//		asset.add(GetAssetResponse.builder().id(1L).fullName("Kenny Geraldy Chandra").umur(22).gender("Laki-Laki").address("Jl. Kintamani No.2").build());
+//		asset.add(GetAssetResponse.builder().id(2L).fullName("Chandra").umur(22).gender("Laki-Laki").address("Jl. Kintamani No.2").build());
+//		asset.add(GetAssetResponse.builder().id(3L).fullName("James Bond").umur(22).gender("Laki-Laki").address("Jl. Kintamani No.2").build());
+//		asset.add(GetAssetResponse.builder().id(4L).fullName("Cherry Jiam").umur(22).gender("Perempuan").address("Jl. Kintamani No.2").build());
+//		asset.add(GetAssetResponse.builder().id(5L).fullName("Jomos").umur(22).gender("Laki-Laki").address("Jl. Kintamani No.2").build());
+//
+//		int start = (page - 1) * size;
+//		int end = Math.min(start + size, asset.size());
+//
+//		if (start >= asset.size()) {
+//			return new ArrayList<>();
+//		}
+//
+//		return asset.subList(start, end);
+//	}
 
-		List<GetAssetResponse> asset = new ArrayList<>();
-		asset.add(GetAssetResponse.builder().id(1L).fullName("Kenny Geraldy Chandra").umur(22).gender("Laki-Laki").address("Jl. Kintamani No.2").build());
-		asset.add(GetAssetResponse.builder().id(2L).fullName("Chandra").umur(22).gender("Laki-Laki").address("Jl. Kintamani No.2").build());
-		asset.add(GetAssetResponse.builder().id(3L).fullName("James Bond").umur(22).gender("Laki-Laki").address("Jl. Kintamani No.2").build());
-		asset.add(GetAssetResponse.builder().id(4L).fullName("Cherry Jiam").umur(22).gender("Perempuan").address("Jl. Kintamani No.2").build());
-		asset.add(GetAssetResponse.builder().id(5L).fullName("Jomos").umur(22).gender("Laki-Laki").address("Jl. Kintamani No.2").build());
+//	@PostMapping("/users")
+//	public ResponseEntity<List<CreateUserResponse>> createUser(
+//	@RequestBody CreateUserRequest request){
+//
+////	Init data
+//	List<CreateUserResponse> users = new ArrayList<>();
+//
+////	Mock data
+//	users.add(CreateUserResponse.builder().id(1L).name("John").build());
+//	users.add(CreateUserResponse.builder().id(2L).name("Bryan").build());
+//
+////	add new user
+//	users.add(
+//			CreateUserResponse.builder().id(request.getId()).name(request.getName()).build()
+//			);
+//
+//
+//			return new ResponseEntity<>(users, HttpStatus.OK);
+//	}
+//
+	@PostMapping("/employees")
+	public ResponseEntity<List<EmployeeUserResponse>> createUser(
+	@RequestBody EmployeeUserRequest request){
 
-		int start = (page - 1) * size;
-		int end = Math.min(start + size, asset.size());
+//	Init data
+	List<EmployeeUserResponse> users = new ArrayList<>();
 
-		if (start >= asset.size()) {
-			return new ArrayList<>();
-		}
+//	Mock data
+	users.add(EmployeeUserResponse.builder().id(1L).name("John").age(22).address("Jalan Bojong No.1").phone("0813912131").build());
+	users.add(EmployeeUserResponse.builder().id(2L).name("Bryan").age(23).address("Jalan Krimanti No.2").phone("0813912131").build());
 
-		return asset.subList(start, end);
+	//	add new user
+	users.add(
+			EmployeeUserResponse.builder().id(users.size()+1L).name(request.getName()).age(request.getAge()).address(request.getAddress()).phone(request.getPhone()).build()
+			);
+
+			return new ResponseEntity<>(users, HttpStatus.OK);
 	}
-
-
 
 //	@GetMapping("calculator/add")
 //	public String getAdd(
