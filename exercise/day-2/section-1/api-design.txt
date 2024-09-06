@@ -1,0 +1,65 @@
+- Get User Data - 
+URL: profile/users
+Method: POST
+RequestBody
+{
+    "name": "Kenny Geraldy",
+    "umur":22,
+    "gender":"Laki-Laki"
+    "address":"Jl. Kiraman No.1"
+    "deskripsi": "Kerja Kerja Kerja"
+}
+
+ResponseBody
+{
+  "id": "U001",
+  "status": "200",
+  "url": "https://test.com/profile/users"
+}
+
+- Get User Data - 
+URL: profile/users
+Method: GET
+RequestBody
+{
+    "id": "UU01",
+    "name": "Kenny Geraldy",
+    "umur":22,
+    "gender":"Laki-Laki"
+    "address":"Jl. Kiraman No.1"
+}
+
+ResponseBody
+{
+  "id": "U001",
+  "status": "200",
+  "url": "https://test.com/users"
+}
+
+
+- Update User Data - 
+URL: profile/users
+Method: PUT
+RequestBody
+{
+    "address":"Jl. Taliwangi No.23"
+}
+
+ResponseBody
+{
+  "status": "200",
+}
+
+
+- Delete User Data By Id - 
+URL: profile/users
+Method: DELETE
+RequestBody
+{
+    "id":"U001"
+}
+
+ResponseBody
+{
+  "status": "200",
+}
