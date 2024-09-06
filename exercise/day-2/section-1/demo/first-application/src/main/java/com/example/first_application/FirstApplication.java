@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 @RestController
 @SpringBootApplication
@@ -48,7 +50,7 @@ public class FirstApplication {
 	}
 
 	@GetMapping("/assets/{id}")
-	public GetAssetResponse getAssetById(
+	public List<GetAssetResponse> getAssetById(
 			@PathVariable Long id
 	){
 
@@ -60,12 +62,21 @@ public class FirstApplication {
 		asset.add(GetAssetResponse.builder().id(5L).fullName("Jomos").umur(22).gender("Laki-Laki").address("Jl. Kintamani No.2").build());
 //		return GetAssetResponse.builder().id(id).fullName(fullName).build();
 
+//		for (GetAssetResponse getAssetResponse : asset){
+//			if(id.equals(getAssetResponse.getId())) {
+//				return getAssetResponse;
+//			}
+//		}
+//		return null;
+
+		List<GetAssetResponse> tempAsset = new ArrayList<>();
+
 		for (GetAssetResponse getAssetResponse : asset){
-			if(id.equals(getAssetResponse.getId())) {
-				return getAssetResponse;
+			if(getAssetResponse.getId() >= id) {
+				tempAsset.add(getAssetResponse);
 			}
 		}
-		return null;
+		return tempAsset;
 	}
 
 //	@GetMapping
