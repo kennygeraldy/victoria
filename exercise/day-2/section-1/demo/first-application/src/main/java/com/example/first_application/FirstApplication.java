@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.lang.reflect.Array;
@@ -22,7 +23,7 @@ public class FirstApplication {
 	}
 
 	@GetMapping
-	public ArrayList<GetAssetResponse> getAsset(){
+	public ArrayList<GetAssetResponse> getAsset() {
 
 		ArrayList<GetAssetResponse> List = new ArrayList<>();
 		var response = GetAssetResponse.builder().id(1L).fullName("Kenny Geraldy Chandra").umur(22).gender("Laki-Laki").address("Jl. Kintamani No.2").build();
@@ -49,17 +50,17 @@ public class FirstApplication {
 //		return response;
 	}
 
-	@GetMapping("/assets/{id}")
-	public List<GetAssetResponse> getAssetById(
-			@PathVariable Long id
-	){
-
-		List<GetAssetResponse> asset = new ArrayList<>();
-		asset.add(GetAssetResponse.builder().id(1L).fullName("Kenny Geraldy Chandra").umur(22).gender("Laki-Laki").address("Jl. Kintamani No.2").build());
-		asset.add(GetAssetResponse.builder().id(2L).fullName("Chandra").umur(22).gender("Laki-Laki").address("Jl. Kintamani No.2").build());
-		asset.add(GetAssetResponse.builder().id(3L).fullName("James Bond").umur(22).gender("Laki-Laki").address("Jl. Kintamani No.2").build());
-		asset.add(GetAssetResponse.builder().id(4L).fullName("Cherry Jiam").umur(22).gender("Perempuan").address("Jl. Kintamani No.2").build());
-		asset.add(GetAssetResponse.builder().id(5L).fullName("Jomos").umur(22).gender("Laki-Laki").address("Jl. Kintamani No.2").build());
+//	@GetMapping("/assets/{id}")
+//	public List<GetAssetResponse> getAssetById(
+//			@PathVariable Long id
+//	){
+//
+//		List<GetAssetResponse> asset = new ArrayList<>();
+//		asset.add(GetAssetResponse.builder().id(1L).fullName("Kenny Geraldy Chandra").umur(22).gender("Laki-Laki").address("Jl. Kintamani No.2").build());
+//		asset.add(GetAssetResponse.builder().id(2L).fullName("Chandra").umur(22).gender("Laki-Laki").address("Jl. Kintamani No.2").build());
+//		asset.add(GetAssetResponse.builder().id(3L).fullName("James Bond").umur(22).gender("Laki-Laki").address("Jl. Kintamani No.2").build());
+//		asset.add(GetAssetResponse.builder().id(4L).fullName("Cherry Jiam").umur(22).gender("Perempuan").address("Jl. Kintamani No.2").build());
+//		asset.add(GetAssetResponse.builder().id(5L).fullName("Jomos").umur(22).gender("Laki-Laki").address("Jl. Kintamani No.2").build());
 //		return GetAssetResponse.builder().id(id).fullName(fullName).build();
 
 //		for (GetAssetResponse getAssetResponse : asset){
@@ -69,15 +70,48 @@ public class FirstApplication {
 //		}
 //		return null;
 
-		List<GetAssetResponse> tempAsset = new ArrayList<>();
+//		List<GetAssetResponse> tempAsset = new ArrayList<>();
+//
+//		for (GetAssetResponse getAssetResponse : asset){
+//			if(getAssetResponse.getId() >= id) {
+//				tempAsset.add(getAssetResponse);
+//			}
+//		}
+//		return tempAsset;
+//	}
 
-		for (GetAssetResponse getAssetResponse : asset){
-			if(getAssetResponse.getId() >= id) {
-				tempAsset.add(getAssetResponse);
-			}
+	@GetMapping("/assets")
+	public List<GetAssetResponse> getAssetById(
+			@RequestParam(name = "page", required = false, defaultValue = "1") int page,
+			@RequestParam(name = "size", required = false, defaultValue = "3") int size
+	) {
+
+		List<GetAssetResponse> asset = new ArrayList<>();
+		asset.add(GetAssetResponse.builder().id(1L).fullName("Kenny Geraldy Chandra").umur(22).gender("Laki-Laki").address("Jl. Kintamani No.2").build());
+		asset.add(GetAssetResponse.builder().id(2L).fullName("Chandra").umur(22).gender("Laki-Laki").address("Jl. Kintamani No.2").build());
+		asset.add(GetAssetResponse.builder().id(3L).fullName("James Bond").umur(22).gender("Laki-Laki").address("Jl. Kintamani No.2").build());
+		asset.add(GetAssetResponse.builder().id(4L).fullName("Cherry Jiam").umur(22).gender("Perempuan").address("Jl. Kintamani No.2").build());
+		asset.add(GetAssetResponse.builder().id(5L).fullName("Jomos").umur(22).gender("Laki-Laki").address("Jl. Kintamani No.2").build());
+
+		int start = (page - 1) * size;
+		int end = Math.min(start + size, asset.size());
+
+		if (start >= asset.size()) {
+			return new ArrayList<>();
 		}
-		return tempAsset;
+
+		return asset.subList(start, end);
 	}
+
+
+
+//	@GetMapping("calculator/add")
+//	public String getAdd(
+//			@RequestParam(name = "panjang") int panjang,
+//			@RequestParam(name = "lebar", required = false, defaultValue = "20") int lebar
+//	){
+//		return String.valueOf(panjang+lebar);
+//	}
 
 //	@GetMapping
 //	public String sayHello(){
