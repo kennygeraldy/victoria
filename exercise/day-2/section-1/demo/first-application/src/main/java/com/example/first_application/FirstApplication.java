@@ -1,9 +1,8 @@
 package com.example.first_application;
 
 import com.example.first_application.request.CreateUserRequest;
-import com.example.first_application.request.EmployeeUserRequest;
+import com.example.first_application.request.UpdateUserRequest;
 import com.example.first_application.response.CreateUserResponse;
-import com.example.first_application.response.EmployeeUserResponse;
 import com.example.first_application.response.GetAssetResponse;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,9 +17,12 @@ import java.util.List;
 @SpringBootApplication
 public class FirstApplication {
 
+
 	public static void main(String[] args) {
 		SpringApplication.run(FirstApplication.class, args);
 	}
+
+	private List<CreateUserResponse> users = new ArrayList<>();
 
 	@GetMapping
 	public ArrayList<GetAssetResponse> getAsset() {
@@ -123,26 +125,72 @@ public class FirstApplication {
 //			return new ResponseEntity<>(users, HttpStatus.OK);
 //	}
 //
-	@PostMapping("/employees")
-	public ResponseEntity<List<EmployeeUserResponse>> createUser(
-	@RequestBody EmployeeUserRequest request){
-
+//	@PostMapping("/employees")
+//	public ResponseEntity<List<EmployeeUserResponse>> createUser(
+//	@RequestBody EmployeeUserRequest request){
+//
+////	Init data
+//	List<EmployeeUserResponse> users = new ArrayList<>();
+//
+////	Mock data
+//	users.add(EmployeeUserResponse.builder().id(1L).name("John").age(22).address("Jalan Bojong No.1").phone("0813912131").build());
+//	users.add(EmployeeUserResponse.builder().id(2L).name("Bryan").age(23).address("Jalan Krimanti No.2").phone("0813912131").build());
+//
+//	//	add new user
+//		if (request.getName() != null && request.getAge() != 0 && request.getPhone() != null) {
+//		users.add(
+//			EmployeeUserResponse.builder().id(users.size()+1L).name(request.getName()).age(request.getAge()).address(request.getAddress()).phone(request.getPhone()).build()
+//			);
+//		}
+//			return new ResponseEntity<>(users, HttpStatus.OK);
+//	}	@PostMapping("/employees")
+//	public ResponseEntity<List<EmployeeUserResponse>> createUser(
+//	@RequestBody EmployeeUserRequest request){
+//
 //	Init data
-	List<EmployeeUserResponse> users = new ArrayList<>();
+//	List<EmployeeUserResponse> users = new ArrayList<>();
+//
+////	Mock data
+//	users.add(EmployeeUserResponse.builder().id(1L).name("John").age(22).address("Jalan Bojong No.1").phone("0813912131").build());
+//	users.add(EmployeeUserResponse.builder().id(2L).name("Bryan").age(23).address("Jalan Krimanti No.2").phone("0813912131").build());
+//
+//	//	add new user
+//		if (request.getName() != null && request.getAge() != 0 && request.getPhone() != null) {
+//		users.add(
+//			EmployeeUserResponse.builder().id(users.size()+1L).name(request.getName()).age(request.getAge()).address(request.getAddress()).phone(request.getPhone()).build()
+//			);
+//		}
+//			return new ResponseEntity<>(users, HttpStatus.OK);
+//	}
 
-//	Mock data
-	users.add(EmployeeUserResponse.builder().id(1L).name("John").age(22).address("Jalan Bojong No.1").phone("0813912131").build());
-	users.add(EmployeeUserResponse.builder().id(2L).name("Bryan").age(23).address("Jalan Krimanti No.2").phone("0813912131").build());
+//		BARU
 
-	//	add new user
-		if (request.getName() != null && request.getAge() != 0 && request.getPhone() != null) {
-		users.add(
-			EmployeeUserResponse.builder().id(users.size()+1L).name(request.getName()).age(request.getAge()).address(request.getAddress()).phone(request.getPhone()).build()
-			);
-		}
-			return new ResponseEntity<>(users, HttpStatus.OK);
+	@PostMapping("/users")
+	public ResponseEntity<List<CreateUserResponse>> createUser(
+			@RequestBody CreateUserRequest request) {
+
+		users.add(CreateUserResponse.builder().id((long) users.size()+1).name(request.getName()).build());
+
+//return response
+		return new ResponseEntity<>(users, HttpStatus.OK);
 	}
 
+	@PatchMapping("/users/{id}")
+	public ResponseEntity<List<CreateUserResponse>> updateUser(
+			@RequestBody UpdateUserRequest request,
+			@PathVariable("id") Long id
+	){
+
+		//check
+		for(CreateUserResponse user : users) {
+			if(user.getId()==id){
+				user.setName(request.getName());
+			}
+		}
+//		return response
+		return new ResponseEntity<>(users, HttpStatus.OK);
+	}
+}
 //	@GetMapping("calculator/add")
 //	public String getAdd(
 //			@RequestParam(name = "panjang") int panjang,
@@ -160,4 +208,4 @@ public class FirstApplication {
 //	public List<String> getUser(){
 //		return List.of("John","Jane","Jack");
 //	}
-}
+
