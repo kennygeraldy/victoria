@@ -1,0 +1,49 @@
+1. B
+2. B
+3. B
+4. TRUE
+5. B
+6. B
+7. TRUE
+8. C
+9. C
+10. D 
+11. B
+12. TRUE
+13. D
+14. B
+15. A
+16. TRUE
+17. C
+18. C
+19. FALSE
+20. A
+21. B
+22. A
+23. C
+24. A
+25. TRUE
+26. B
+27.C
+28. SELECT * FROM books;
+29. B
+30. B
+
+1. 
+SELECT x.title, y.name AS author_name, z.name AS genre
+FROM books x
+JOIN authors y ON x.author_id = y.id
+JOIN genres z ON b.genre_id = z.id
+WHERE z.name IN ('Mystery', 'Thriller');
+2.
+SELECT b.name, COUNT(c.id) AS books_borrowed
+FROM borrowers b
+JOIN borrowed_books c ON b.id = c.borrower_id
+GROUP BY b.name
+HAVING COUNT(c.id) > 5;
+3. gak tau lupa
+4. gak tau lupa
+5. gak tau lupa
+6. gak tau lupa
+7. gak tau lupa
+8. gak tau lupa
