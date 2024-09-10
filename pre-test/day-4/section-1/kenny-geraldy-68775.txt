@@ -1,0 +1,27 @@
+1. B
+2. A
+3. B
+4. A
+5. B
+6. A
+7. B
+8. B
+9. A
+10. C
+
+
+11. Token JWT biasanya memiliki waktu kedaluwarsa untuk alasan keamanan. Setelah token kedaluwarsa, pengguna memerlukan refresh token untuk mendapatkan token baru tanpa harus login kembali. Refresh token berfungsi untuk menjaga akses yang berkelanjutan tanpa membiarkan token yang kadaluwarsa digunakan kembali, mengurangi risiko keamanan.
+12. Enkripsi kata sandi penting untuk melindungi kata sandi dari pencurian atau kebocoran data. BCrypt adalah salah satu algoritma hashing yang digunakan oleh Spring Security untuk menyimpan kata sandi dalam bentuk terenkripsi. BCrypt membuat hashing kata sandi menjadi lambat secara sengaja, sehingga lebih sulit bagi penyerang untuk melakukan serangan brute force.
+13. Untuk mengimplementasikan login OAuth2 di Spring Boot, Anda perlu mengonfigurasi detail OAuth2 client seperti client ID, client secret, dan authorization server. Spring Security menyediakan dukungan bawaan untuk login melalui OAuth2, sehingga Anda bisa dengan mudah mengintegrasikan login dari penyedia seperti Google atau Facebook melalui konfigurasi.
+14. OAuth2 authorization server bertanggung jawab untuk mengautentikasi pengguna dan menerbitkan access token, yang kemudian digunakan oleh client untuk mengakses resource yang dilindungi. Dalam aplikasi Spring Boot, server ini dapat diimplementasikan untuk menyediakan fungsi otorisasi yang terpusat dan aman.
+15. CORS adalah mekanisme yang memungkinkan resource pada satu domain diakses oleh domain lain.  hal ini penting dikarenakan API dapat digunakan oleh berbagai frontend dari domain yang berbeda. CORS melindungi dari akses yang tidak sah oleh domain luar.
+16. Kita bisa mengonfigurasi CORS di Spring Boot melalui pengaturan CorsConfiguration, baik secara global maupun spesifik pada setiap controller. Spring Security juga menyediakan filter untuk menangani permintaan CORS, yang dapat diaktifkan dengan konfigurasi.
+17. Serangan session fixation melibatkan penyerang yang mencoba membuat pengguna menggunakan session ID yang telah ditentukan sebelumnya, yang memungkinkan penyerang untuk mengambil alih sesi pengguna. Spring Security melindungi dari serangan ini dengan cara menghasilkan session ID baru setelah pengguna berhasil login.
+18. Manajemen sesi stateful menyimpan informasi sesi pengguna di server, sedangkan manajemen sesi stateless (seperti yang diterapkan dengan JWT) menyimpan semua informasi pengguna dalam token itu sendiri. Manajemen stateless tidak memerlukan penyimpanan sisi server, sehingga lebih scalable dan efisien.
+19. 
+- Validasi input yang buruk (menyebabkan SQL Injection, XSS)
+- Penyimpanan kata sandi yang tidak aman
+- Manajemen sesi yang buruk
+Untuk menghindari ini, kita dapat melakukan pengkodean yang aman, gunakan enkripsi, dan gunakan kerangka kerja seperti spring security.
+20. Audit keamanan secara berkala penting untuk mengidentifikasi dan memperbaiki kelemahan keamanan sebelum dieksploitasi oleh penyerang. Alat seperti OWASP ZAP, Burp Suite, dan pemindai kerentanan dependency dapat membantu dalam mengaudit keamanan aplikasi secara efektif.
+
