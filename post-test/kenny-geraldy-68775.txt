@@ -1,0 +1,46 @@
+1. B
+2. A
+3. D
+4. A
+5. D
+6. False
+7. True
+8. True
+9. False
+10. True 
+
+11. Controller berfungsi untuk menghandle http request yang dilakukan user melalui halaman kemudian memberikan response yang tepat sesuai dengan tindakan yang dilakukan user.
+12. Untuk service layer berinteraksi dengan repository layer dibutuhkan service implementation  untuk mengimplementasikan logic yang ada pada halaman services dan digunakan padahalaman repo.
+13. Dalam sebuah struktural folder springwood biasanya berisikan layeran agar membuat interaksi antar folder mduah, hal ini mirip dengan pemaparan hierarchy pada masing-masing folder, 
+Controller = tempat untuk menghandle http request dan response
+Service = tempat base logic dari aplikasi tersebut
+Repository = tempat kontainer untuk menampung data
+14. Repository berfungsi sebagai sebuah kontainer untuk tempat pengiriman dan penampungan data yang diterima. 
+15. Implicit dilakukan secara otomatis oleh kompiler ketika tidak ada kehilangan data, sebaliknya casting dengan eksplisit memerlukan intervensi manual dan digunakan ketika ada kemungkinan untuk kehilangan data.
+16.Pertama tentukan role yanag dibutuhkan untuk diberikan autorisasi kemudian buat sebuah sistemika dimana ketika sebuah user dengan role tertentu ingin mengakses data yang dibutuhkan harus melewati tahapan sekurity. Hal ini dapat dilakukan dengan menyalakan fitur CORS dan CSRF, kemudian buat sebuah menagement stateles dan set unauthorized request exceptuion handler dan terakhir set permission endpoint. dan tambahkan jwt filter.
+17. 
+ String number = "23.56";
+        try {
+            double numbers = Double.parseDouble(numberString);
+            System.out.println("Nilai doublenya adalah " + numbers);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid double format: " + number);
+        }
+18. Role dari assertEquals adalah dalam unit testing untuk memverifikasi sebuah data untuk mengetahui apakah hasil dari suatu  metode sesuai dengan nilai yang diharapkan. Jika nilai yang diperoleh tidak sama dengan nilai yang diharapkan, maka pengujian dianggap gagal. Ini membantu memastikan bahwa kode yang diuji berfungsi seperti yang diharapkan.
+19. Pertama kita harus mengaktifkan UserDetailsService di dalam aplikasi kita sebagai bean, kemudian kita dapat memanggilnya dengan anotasi @Service, aplikasi akan otomatis mendetect. kemudian untuk kustomisasi kita dapat membuat sebuah kelas khusus untuk interaksi dan pengimplementasiannya serta logika yang dibutuhkan untuk mengambil detail pengguna dari database.
+20. anotasi @Service, diaplikasikan pada halaman services
+21. Tugas utama dari service layer adalah tempat untuk semua logic-logic yang dibutuhkan.
+22. Kita dapat menggunakan mockit untuk membuat mocking framework untuk membuat mock objek dan mendefinisikan metodenya., kemudian kita dapat melakukan Stubbing dan melakukan verifikasi data, terakir kita dapat melakukan verifikasi
+23. Secara singkat role dari @RequestMapping digunakan untuk memetakan permintaan ke metode pengontrol.
+24 Membuat sebuah unit test dengan pemaparan mockit untuk membuat dummy data yang dibutuhkan untuk melakukan test service, agar kita dapat melakukan prevention terhadap terjadinya error.
+25. Steps untuk menghandle exceptions adalah sebagai berikut,
+Create a Custom ProductNotFoundException:
+Create a Product Service:
+Create a Global Exception Handler:
+Create a Custom Error Response Class:
+Controller to Fetch Product:
+Testing the Exception Handling:
+Controller Method Execution:
+Exception Occurs:
+
+
